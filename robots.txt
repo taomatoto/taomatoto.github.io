@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://taomatoto.github.io/sitemap.xml
