@@ -16,7 +16,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi I am Zhengtao Ma (马正涛). I'm a first-year (2024-) PhD student in the [BWM Group + QUT Design Academy](https://www.bmwgroupqutdesign.academy/), Queensland University of Technology (Brisbane), supervised by <u>Dr. Rafael Gomez</u> and <u>Prof. Ronald Schroeter</u>. 
+Hi I am Zhengtao Ma (马正涛), I'm a first-year (2024-) PhD student in the [BWM Group + QUT Design Academy](https://www.bmwgroupqutdesign.academy/), Queensland University of Technology (Brisbane), supervised by <u>Dr. Rafael Gomez</u> and <u>Prof. Ronald Schroeter</u>. 
 
 My research in human-computer interaction dive into designing interactions in Automated Vehicles, with a particular focus on improving the accessibility of Fully Automated Vehicles. 
 
