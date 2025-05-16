@@ -1,18 +1,19 @@
-name: Docker Image CI (Upload Tag)
+# This workflow is disabled
+# name: Docker Image CI (Upload Tag)
 
-on:
-  push:
-    tags:
-      - "v*"
-    paths:
-      - ".github/workflows/deploy-docker-tag.yml"
-      - ".github/workflows/deploy-image.yml"
-      - "bin/entry_point.sh"
-      - "Dockerfile"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "package.json"
-      - "package-lock.json"
+# on:
+#   push:
+#     tags:
+#       - "v*"
+#     paths:
+#       - ".github/workflows/deploy-docker-tag.yml"
+#       - ".github/workflows/deploy-image.yml"
+#       - "bin/entry_point.sh"
+#       - "Dockerfile"
+#       - "Gemfile"
+#       - "Gemfile.lock"
+#       - "package.json"
+#       - "package-lock.json"
 
 jobs:
   build:
