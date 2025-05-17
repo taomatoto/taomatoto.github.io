@@ -23,14 +23,15 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1.9"
-          bundler: "2.4.22"
+          ruby-version: '3.1.9'
           bundler-cache: true
+          cache-version: 0
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
         run: |
+          bundle install
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
           touch _site/.nojekyll
         env:
