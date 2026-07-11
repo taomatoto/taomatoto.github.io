@@ -1,0 +1,212 @@
+/*******************************************************************************
+ * Minimal visual works page.
+ ******************************************************************************/
+
+.works-page {
+  --works-line: rgba(0, 0, 0, 0.18);
+  --works-muted: rgba(0, 0, 0, 0.62);
+  --works-quiet: rgba(0, 0, 0, 0.045);
+  --works-accent: var(--studio-accent, #0078ff);
+
+  padding-bottom: 4rem;
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+html[data-theme="dark"] .works-page {
+  --works-line: rgba(255, 255, 255, 0.22);
+  --works-muted: rgba(255, 255, 255, 0.62);
+  --works-quiet: rgba(255, 255, 255, 0.06);
+  --works-accent: var(--studio-accent, #49a7ff);
+}
+
+.works-hero {
+  border-top: 1px solid var(--works-line);
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+  padding-top: 1rem;
+}
+
+.works-hero__meta,
+.work-card__eyebrow,
+.work-card__footer {
+  color: var(--works-muted);
+  display: flex;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  gap: 0.75rem;
+  justify-content: space-between;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.works-hero__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.72fr);
+}
+
+.works-hero h1 {
+  font-size: clamp(2.6rem, 7.4vw, 7.2rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.88;
+  margin: 0;
+  max-width: 8ch;
+}
+
+.works-hero p {
+  align-self: end;
+  color: var(--works-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0 0 0.2rem;
+}
+
+.works-index {
+  border-top: 1px solid var(--works-line);
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.work-card {
+  color: var(--global-text-color);
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: 1fr;
+  min-height: 0;
+  padding: 1rem;
+  position: relative;
+}
+
+.work-card:nth-child(2n),
+.work-card + .work-card {
+  border-top: 1px solid var(--works-line);
+}
+
+.work-card:nth-child(2n) {
+  border-left: 1px solid var(--works-line);
+}
+
+.work-card::before {
+  background: var(--works-accent);
+  content: "";
+  height: 0.32rem;
+  left: 1rem;
+  opacity: 0;
+  position: absolute;
+  top: 1rem;
+  transition: opacity 160ms ease;
+  width: calc(100% - 2rem);
+}
+
+.work-card:hover {
+  color: var(--global-text-color);
+}
+
+.work-card:hover::before {
+  opacity: 1;
+}
+
+.work-card__number {
+  color: var(--works-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1;
+  order: 2;
+}
+
+.work-card__media {
+  align-self: stretch;
+  background: var(--works-quiet);
+  border: 0;
+  min-height: 18rem;
+  overflow: hidden;
+  order: 1;
+}
+
+.work-card__media figure,
+.work-card__media picture {
+  height: 100%;
+  margin: 0;
+}
+
+.work-card__image,
+.work-card__media img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 160ms ease, transform 220ms ease;
+  width: 100%;
+}
+
+.work-card:hover .work-card__image,
+.work-card:hover .work-card__media img {
+  filter: grayscale(0);
+  transform: scale(1.025);
+}
+
+.work-card__placeholder {
+  align-items: center;
+  display: flex;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 2rem;
+  height: 100%;
+  justify-content: center;
+  min-height: 18rem;
+  text-transform: uppercase;
+}
+
+.work-card__body {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-rows: auto auto 1fr auto;
+  order: 3;
+}
+
+.work-card h2 {
+  font-size: clamp(1.6rem, 3.6vw, 4.1rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.9;
+  margin: 0;
+  max-width: 9ch;
+}
+
+.work-card p {
+  color: var(--works-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 26rem;
+}
+
+.work-card__arrow {
+  color: var(--global-text-color);
+  font-size: 1rem;
+}
+
+@media (max-width: 760px) {
+  .works-hero__grid,
+  .works-index,
+  .work-card {
+    grid-template-columns: 1fr;
+  }
+
+  .works-hero h1 {
+    max-width: 10ch;
+  }
+
+  .work-card:nth-child(2n) {
+    border-left: 0;
+  }
+
+  .work-card__media {
+    min-height: 19rem;
+  }
+}

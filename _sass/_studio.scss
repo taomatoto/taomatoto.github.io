@@ -1,0 +1,349 @@
+/*******************************************************************************
+ * Studio-wide visual system.
+ ******************************************************************************/
+
+:root {
+  --global-theme-color: #0078ff;
+  --global-hover-color: #0078ff;
+  --studio-line: rgba(0, 0, 0, 0.18);
+  --studio-muted: rgba(0, 0, 0, 0.62);
+  --studio-quiet: rgba(0, 0, 0, 0.045);
+  --studio-accent: #0078ff;
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #49a7ff;
+  --global-hover-color: #49a7ff;
+  --studio-line: rgba(255, 255, 255, 0.22);
+  --studio-muted: rgba(255, 255, 255, 0.64);
+  --studio-quiet: rgba(255, 255, 255, 0.06);
+  --studio-accent: #49a7ff;
+}
+
+body {
+  letter-spacing: 0;
+}
+
+body.fixed-top-nav {
+  padding-top: 68px;
+}
+
+.container {
+  max-width: min(1120px, calc(100vw - 2rem));
+}
+
+.navbar {
+  border-bottom: 1px solid var(--studio-line);
+  opacity: 0.98;
+}
+
+.navbar > .container {
+  align-items: stretch;
+  min-height: 56px;
+}
+
+.navbar.navbar-light .navbar-brand {
+  align-items: center;
+  color: var(--global-text-color);
+  display: flex;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  color: var(--studio-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  text-transform: uppercase;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  color: var(--global-text-color);
+  font-weight: 500;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link::before {
+  background: var(--studio-accent);
+  content: "";
+  display: inline-block;
+  height: 0.58rem;
+  margin-right: 0.45rem;
+  width: 0.58rem;
+}
+
+.navbar-toggler {
+  border: 1px solid var(--studio-line);
+  border-radius: 0;
+  padding: 0.4rem 0.5rem;
+}
+
+.post {
+  padding-bottom: 4rem;
+}
+
+.post-header {
+  border-top: 1px solid var(--studio-line);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.45fr) minmax(14rem, 0.7fr);
+  margin: 1rem 0 2.5rem;
+  padding-top: 1rem;
+}
+
+.post-header::before {
+  color: var(--studio-muted);
+  content: "Index / " attr(data-page-label);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  grid-column: 1 / -1;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.post-title {
+  font-size: clamp(2.4rem, 6vw, 5.6rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.94;
+  margin: 0;
+  max-width: 11ch;
+  text-transform: lowercase;
+}
+
+.post-description,
+.post .desc {
+  align-self: end;
+  color: var(--studio-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0 0 0.2rem;
+}
+
+.post article {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.post article > h2,
+.post article > h3,
+.publications h2.bibliography,
+.projects h2.category {
+  border-top: 1px solid var(--studio-line);
+  color: var(--global-text-color);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin: 2.5rem 0 1rem;
+  padding-top: 0.75rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.post article p {
+  max-width: 66ch;
+}
+
+.profile {
+  border: 1px solid var(--studio-line);
+  margin-bottom: 1.25rem;
+  padding: 0;
+}
+
+.profile img,
+.profile .img-fluid,
+.profile figure {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.profile.float-left {
+  margin-right: 1.5rem;
+}
+
+.profile.float-right {
+  margin-left: 1.5rem;
+}
+
+.social {
+  border-top: 1px solid var(--studio-line);
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  text-align: left;
+}
+
+.social .contact-icons {
+  font-size: 1.35rem;
+}
+
+.card {
+  background: transparent;
+  border: 1px solid var(--studio-line);
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
+.card .card-img-top,
+.card img {
+  border-radius: 0 !important;
+}
+
+.card .card-body {
+  border-top: 1px solid var(--studio-line);
+  padding: 1rem;
+}
+
+.card .card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.05;
+  margin-bottom: 0.5rem;
+}
+
+.card .card-text {
+  color: var(--studio-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.publications {
+  margin-top: 0;
+}
+
+.publications ol.bibliography li {
+  border-top: 1px solid var(--studio-line);
+  margin-bottom: 0;
+  padding: 1rem 0;
+}
+
+.publications ol.bibliography li .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.publications ol.bibliography li .abbr {
+  padding-left: 0;
+}
+
+.publications ol.bibliography li .abbr abbr {
+  background: var(--studio-accent) !important;
+  border-radius: 0;
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 0.35rem 0.45rem;
+}
+
+.publications ol.bibliography li .abbr abbr a {
+  color: #fff;
+}
+
+.publications ol.bibliography li .preview {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-top: 0.5rem;
+}
+
+.publications ol.bibliography li .title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.publications ol.bibliography li .author,
+.publications ol.bibliography li .periodical {
+  color: var(--studio-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.publications ol.bibliography li .links {
+  margin-top: 0.65rem;
+}
+
+.publications ol.bibliography li .links a.btn,
+a.btncv,
+.btn {
+  border: 1px solid var(--studio-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--global-text-color) !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.publications ol.bibliography li .links a.btn:hover,
+a.btncv:hover,
+.btn:hover {
+  background: var(--studio-accent) !important;
+  border-color: var(--studio-accent) !important;
+  color: #fff !important;
+}
+
+blockquote,
+pre,
+code {
+  border-radius: 0;
+}
+
+blockquote {
+  border-left: 0;
+  border-top: 1px solid var(--studio-line);
+  background: var(--studio-quiet);
+}
+
+footer.fixed-bottom,
+footer.sticky-bottom {
+  background: var(--global-bg-color);
+  border-top: 1px solid var(--studio-line);
+}
+
+footer.fixed-bottom .container,
+footer.sticky-bottom .container {
+  color: var(--studio-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.68rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+footer.fixed-bottom a,
+footer.sticky-bottom a {
+  color: var(--global-text-color);
+}
+
+@media (max-width: 760px) {
+  body.fixed-top-nav {
+    padding-top: 60px;
+  }
+
+  .container {
+    max-width: calc(100vw - 1.25rem);
+  }
+
+  .post-header {
+    grid-template-columns: 1fr;
+  }
+
+  .post-title {
+    max-width: 10ch;
+  }
+
+  .profile.float-left,
+  .profile.float-right {
+    float: none !important;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
