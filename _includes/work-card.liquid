@@ -1,9 +1,7 @@
 {% assign project = include.project %}
-{% assign project_index = include.index | prepend: '00' | slice: -2, 2 %}
 {% assign project_url = project.redirect | default: project.url %}
 
 <a class="work-card" href="{{ project_url | relative_url }}" aria-label="Open {{ project.title }}">
-  <div class="work-card__number">{{ project_index }}</div>
   <div class="work-card__media">
     {% if project.img %}
       {% include figure.liquid loading="lazy" path=project.img alt=project.title class="work-card__image" %}
@@ -15,20 +13,14 @@
   </div>
   <div class="work-card__body">
     <div class="work-card__eyebrow">
-      <span>{{ project.category | default: "project" }}</span>
       {% if project.year %}
         <span>{{ project.year }}</span>
+      {% endif %}
+      {% if project.category %}
+        <span>{{ project.category }}</span>
       {% endif %}
     </div>
     <h2>{{ project.title }}</h2>
     <p>{{ project.description }}</p>
-    <div class="work-card__footer">
-      {% if project.tools %}
-        <span>{{ project.tools }}</span>
-      {% else %}
-        <span>research / prototype / system</span>
-      {% endif %}
-      <span class="work-card__arrow">&nearr;</span>
-    </div>
   </div>
 </a>

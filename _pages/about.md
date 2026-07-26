@@ -19,4 +19,4 @@ My research in human-computer interaction dives into designing interactions in A
 
 I earned my M.Sc (Multimedia) from [Hong Kong PolyU](https://www.polyu.edu.hk/) and B.Eng (Mechanics) from [Tianjin University](https://en.wikipedia.org/wiki/Tianjin_University) (China). I was a research associate under the supervision from Prof. Stephen J. Wang at the Future Mobility Center of PolyU.
 
-**Currently seeking UXR (quantitative and qualitative) internship opportunities!**
+**Currently seeking UXR (quantitative and qualitative) or Design Engineering internship opportunities!**

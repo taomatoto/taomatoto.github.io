@@ -7,20 +7,14 @@ nav: true
 nav_order: 1
 ---
 
-{% assign works = site.projects | sort: "importance" %}
+{% assign works = site.projects | where: "featured", true | sort: "importance" %}
 
 <section class="works-hero" aria-labelledby="works-title">
   <div class="works-hero__meta">
     <span>Selected works</span>
-    <span>Design engineering / research systems</span>
+    <span>Design engineering</span>
   </div>
-  <div class="works-hero__grid">
-    <h1 id="works-title">Selected works.</h1>
-    <p>
-      A visual catalogue of prototypes, tools, and experiments across mobility,
-      AI-assisted workflows, and human-machine interaction.
-    </p>
-  </div>
+  <h1 id="works-title">Projects</h1>
 </section>
 
 <section class="works-index" aria-label="Project index">
